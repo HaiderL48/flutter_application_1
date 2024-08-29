@@ -1,27 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/home_page.dart';
-import 'package:flutter_application_1/pages/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-class PassingData {
-  final String data;
-  const PassingData(this.data);
-}
-class LoginPage extends StatefulWidget {
-  // const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  String name = '';
+class SignInPage extends StatelessWidget {
+  // const SignInPage({super.key});
   bool changeButton = false;
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 10.0,
               ),
               Text(
-                'Welcome $name',
+                'Sigin Page',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -64,9 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: "Enter User Name",
                       ),
                       onChanged: (value) {
-                        setState(() {
-                          name = value;
-                        });
+                        
                       },
                     ),
                     SizedBox(
@@ -84,11 +64,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     InkWell(
                       onTap: () async {
-                        setState(() {
-                          changeButton = true;
-                        });
+                       
                         await Future.delayed(Duration(seconds: 1));
-                        Navigator.pushNamed(context, '/home',arguments: name);
+                        Navigator.pushNamed(context, '/home',);
                        
                       },
                       child: AnimatedContainer(
@@ -130,6 +108,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-    );
+    );;
   }
 }
