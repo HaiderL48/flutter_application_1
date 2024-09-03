@@ -1,50 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePage();
+}
+
+class _HomePage extends State<HomePage> {
+  // const SignInPage({super.key});
+  bool changeButton = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: Text('First-App'),
-        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0.1,
+        title: const Text("Title"),
       ),
-      body: Center(
-        child: Container(
-          child: Text('hello world'),
-        ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            Container(
-              width: 20,
-              height: 100,
-              child: const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child:
-                    Center(child: Text('Menu', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),)),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          Image.asset(
+            'assets/images/img3.jpg',
+            height: 900,
+            fit: BoxFit.fill,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Ink(
+                color: Colors.red,
+                height: 50,
+                width: 100,
               ),
-            ),
-            ListTile(
-              title: const Text('Login'),
-              onTap: () {
-                Navigator.pushNamed(context, '/login');
-              },
-            ),
-            ListTile(
-              title: const Text('Sign In'),
-              onTap: () {
-              Navigator.pushNamed(context, '/signin');
-              },
-            ),
-          ],
-        ),
+              const Text('Hello'),
+            ],
+          )
+        ]),
       ),
     );
   }
