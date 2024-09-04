@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,32 +16,20 @@ class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0.1,
         title: const Text("Title"),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          Image.asset(
-            'assets/images/img3.jpg',
-            height: 900,
-            fit: BoxFit.fill,
-          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Ink(
-                color: Colors.red,
-                height: 50,
-                width: 100,
-              ),
-              const Text('Hello'),
-            ],
           )
         ]),
       ),
+      drawer: MyDrawer(),
     );
   }
 }
